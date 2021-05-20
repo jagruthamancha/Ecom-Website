@@ -4,12 +4,21 @@ from django.contrib.auth.decorators import login_required
 from .models import Canvas, Clothing, Laptop, Mobile, Painting
 
 
+# login not required for home
+
 def home(request):
     return render(request, 'jag/home.html')
+
+
+# login required for home
+
 
 @login_required
 def ordered(request):
     return render(request, 'jag/order_success.html')
+
+
+# login required for home
 
 @login_required
 def cart(request):
